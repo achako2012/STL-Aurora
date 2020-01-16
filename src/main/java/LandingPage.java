@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LandingPage {
 
@@ -14,7 +13,7 @@ public class LandingPage {
         return instance;
     }
 
-    private void navigateToSTL(){
+    public void navigateToSTL() {
         webDriver.get("https://smarttrader.com");
     }
 
