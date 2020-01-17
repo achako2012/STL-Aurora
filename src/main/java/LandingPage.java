@@ -7,22 +7,21 @@ public class LandingPage {
 
     //Xpath Locators
     static By joinFreeButton = By.xpath(".//a[@class=\"landing-header__button\"]");
-    static By fullNameField = By.xpath(".//input[@placeholder=\"Full Name\"]");
-    static By emailAdressField = By.xpath(".//input[@placeholder=\"Email Address\"]");
-    static By passwordField = By.xpath(".//input[@placeholder=\"Password\"]");
-    static By confirmPasswordField = By.xpath(".//input[@placeholder=\"Confirm Password\"]");
-    static By phoneField = By.xpath(".//input[@placeholder=\"Phone\"]");
-    static By agreeTermsCheckBox = By.xpath(".//input[@id=\"EULACheckboxLogin\"]");
-    static By confirmRegistrationButton = By.xpath(".//button[text()='JOIN FOR FREE']");
+    static By logInButton = By.xpath(".//a[text()='Log in']");
 
+    static By agreeCookie = By.xpath(".//button[text()='Agree']");
+
+    //Class fields
     private static LandingPage instance;
     private static WebDriver driver = SetUp.getWebDriverInstance();
     private static WebDriverWait driverWait = SetUp.getWebDriverWaitInstance();
 
 
+    //Class constructor
     private LandingPage() {
     }
 
+    //Singleton realization
     public static synchronized LandingPage getInstance() {
 
         if (instance == null) {
@@ -31,6 +30,7 @@ public class LandingPage {
         return instance;
     }
 
+    //Methods
     public static void navigateToSTL() {
         driver.get("https://smarttrader.com");
         SetUp.waitForPageLoaded();
@@ -45,27 +45,19 @@ public class LandingPage {
 
     }
 
-    public static void fillUpRegisterForms(String fullName, String email, String password, String phone) {
+    public static void navigateToLogIn() {
 
-        driver.findElement(fullNameField).clear();
-        driver.findElement(fullNameField).sendKeys(fullName + SetUp.date);
-
-        driver.findElement(emailAdressField).clear();
-        driver.findElement(emailAdressField).sendKeys(SetUp.date + email);
-
-        driver.findElement(passwordField).clear();
-        driver.findElement(passwordField).sendKeys(password + SetUp.date);
-
-        driver.findElement(confirmPasswordField).clear();
-        driver.findElement(confirmPasswordField).sendKeys(password + SetUp.date);
-
-        driver.findElement(phoneField).clear();
-        driver.findElement(phoneField).sendKeys(phone);
-
-        driver.findElement(agreeTermsCheckBox).click();
-
-        driver.findElement(confirmRegistrationButton).click();
+        driverWait.until(ExpectedConditions.presenceOfElementLocated(logInButton));
+        driverWait.until(ExpectedConditions.elementToBeClickable(logInButton));
+        driver.findElement(logInButton).click();
         SetUp.waitForPageLoaded();
+    }
+
+
+    public static void agreeCookie() {
+        driverWait.until(ExpectedConditions.presenceOfElementLocated(agreeCookie));
+        driver.findElement(agreeCookie).click();
+        driverWait.until(ExpectedConditions.invisibilityOfElementLocated(agreeCookie));
     }
 
 }
