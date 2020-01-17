@@ -6,11 +6,18 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SetUp {
 
     private static WebDriver driver;
     private static WebDriverWait driverWait;
     private static int timeOutSeconds = 10;
+
+    static SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyyHHmmss");
+    static Date currentDate = new Date();
+    static String date = dateFormat.format(currentDate);
 
     private SetUp() {
     }
@@ -39,7 +46,7 @@ public class SetUp {
     }
 
     //Wait method with JS
-    public static void waitForPageLoaded(){
+    public static void waitForPageLoaded() {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
