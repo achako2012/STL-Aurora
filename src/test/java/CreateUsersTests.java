@@ -1,14 +1,14 @@
 import org.testng.annotations.Test;
 
-public class FirstTest extends MainTest {
+public class CreateUsersTests extends MainTest {
 
+    LandingPage landingPage = LandingPage.getInstance();
 
     @Test
     public void navigateToCharts() {
 
         landingPage.navigateToSTL();
-
-
     }
+
 
 }
