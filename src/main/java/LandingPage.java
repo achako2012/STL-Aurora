@@ -8,6 +8,7 @@ public class LandingPage {
     //Xpath Locators
     static By joinFreeButton = By.xpath(".//a[@class=\"landing-header__button\"]");
     static By logInButton = By.xpath(".//a[text()='Log in']");
+    static By chartsPage = By.xpath(".//a[@href=\"/charts/\"][text()='Charts'][@class=\"landing-header__nav-link\"]");
 
     static By agreeCookie = By.xpath(".//button[text()='Agree']");
 
@@ -55,9 +56,17 @@ public class LandingPage {
 
 
     public static void agreeCookie() {
+
         driverWait.until(ExpectedConditions.presenceOfElementLocated(agreeCookie));
         driver.findElement(agreeCookie).click();
         driverWait.until(ExpectedConditions.invisibilityOfElementLocated(agreeCookie));
+    }
+
+    public static void navigateToCharts() {
+
+        driverWait.until(ExpectedConditions.presenceOfElementLocated(chartsPage));
+        driver.findElement(chartsPage).click();
+        SetUp.waitForPageLoaded();
     }
 
 }

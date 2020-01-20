@@ -1,19 +1,18 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LogInTest extends MainTest implements TestDates {
-
+public class RegisterTest extends MainTest implements TestDates {
     LandingPage landingPage = LandingPage.getInstance();
-    LogInPage logInPage = LogInPage.getInstance();
-
+    RegisterPage registerPage = RegisterPage.getInstance();
 
     @Test
-    public void logIn() {
+    public void registerNewUser() {
+
         landingPage.navigateToSTL();
         Assert.assertEquals("Forex Trading Software & Stock Market Charting Software | SmartTrader", driver.getTitle());
         landingPage.agreeCookie();
-        landingPage.navigateToLogIn();
-        logInPage.logIn(emailToLogin, passwordToLogin);
-
+        landingPage.navigateToJoinFree();
+        registerPage.fillUpRegisterForms(fullName, email, password, phone);
+        landingPage.navigateToCharts();
     }
 }
