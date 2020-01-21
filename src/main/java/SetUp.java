@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -15,13 +14,12 @@ public class SetUp {
     private static WebDriver driver;
     private static WebDriverWait driverWait;
     private static int timeOutSeconds = 10;
+    //static String date;
 
-    static SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyyHHmmss");
-    static Date currentDate = new Date();
-    static String date = dateFormat.format(currentDate);
-
+    //Constructor
     private SetUp() {
     }
+
 
     public static WebDriver getWebDriverInstance() {
         if (driver == null) {
@@ -30,6 +28,14 @@ public class SetUp {
             driver.manage().window().maximize();
         }
         return driver;
+    }
+
+    //Methods
+    static String date;
+    public static String getCurrentDate() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyyHHmmss");
+        Date currentDate = new Date();
+        return date = dateFormat.format(currentDate);
     }
 
     public static void quitDriver() {

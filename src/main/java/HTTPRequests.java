@@ -22,7 +22,7 @@ public class HTTPRequests {
 
         given()
                 .param("l", "MAINTENANCE_ADMIN")
-                .header("p", "fd4e73e45a4a")
+                .param("p", "fd4e73e45a4a")
                 .when()
                 .post("https://backoffice-prod01.smarttraderlabs.com/eforex231-admin/admin-app/login")
                 .then().log().cookies()
@@ -38,11 +38,28 @@ public class HTTPRequests {
                 .param("page", "1")
                 .param("start", "0")
                 .param("limit", "25")
-                .cookies("JSESSIONID", "604C0148F6CF7B61F8B40259F7D82B3C")
+                .cookies("JSESSIONID", "B0F86477758B60C9F1DAC49788B4DCDF")
                 .when()
                 .get("https://backoffice-prod01.smarttraderlabs.com/eforex231-admin/admin-app/json/user/find.json")
                 .then().log().body()
                 .statusCode(200);
+    }
+
+    public static void set360ProTag() {
+
+        given()
+
+                .contentType("application/x-www-form-urlencoded")
+                .param("len_type", "N")
+                .param("start_date", "12/17/2019")
+                .param("ref_id", "149579")
+                .param("add", "1075")
+                .cookies("JSESSIONID", "604C0148F6CF7B61F8B40259F7D82B3C")
+                .when()
+                .get("https://backoffice-prod01.smarttraderlabs.com/eforex231-admin/admin-app/json/mti/cust_tag_set.json")
+                .then().log().body()
+                .statusCode(200);
+
     }
 }
 

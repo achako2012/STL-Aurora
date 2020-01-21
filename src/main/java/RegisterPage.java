@@ -29,6 +29,8 @@ public class RegisterPage {
     }
     public static void fillUpRegisterForms(String fullName, String email, String password, String phone) {
 
+        SetUp.getCurrentDate();
+
         driver.findElement(fullNameField).clear();
         driver.findElement(fullNameField).sendKeys(fullName + SetUp.date);
 

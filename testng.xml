@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Critical CheckList" parallel="instances" thread-count="1">
-    <!--<test name="Create FREE user Test" preserve-order="true">
+    <!--<Test name="Create FREE user Test" preserve-order="true">
         <classes>
             <class name="HomePageTest">
                 <methods>
@@ -22,5 +22,5 @@
                 </methods>
             </class>
         </classes>
-    </test>-->
+    </Test>-->
 </suite>
