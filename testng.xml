@@ -1,26 +1,26 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Critical CheckList" parallel="instances" thread-count="1">
-    <!--<Test name="Create FREE user Test" preserve-order="true">
-        <classes>
-            <class name="HomePageTest">
-                <methods>
-                    <include name="Landing"/>
-                    <include name="NavigateToRegistration"/>
-                </methods>
-            </class>
-            <class name="RegistrationTest"/>
-            <class name="OfferPageTest"/>
-            <class name="ChartsTest">
-                <methods>
-                    <include name="agreeCookie"/>
-                    <include name="skipTutorial"/>
-                    <include name="addWorkspace"/>
-                    <include name="addIndicators"/>
-                    <include name="addWorkspace"/>
-                    <include name="openChartSettingsModal"/>
-                    <include name="changeChartColor"/>
-                </methods>
-            </class>
-        </classes>
-    </Test>-->
+   <test name="Create FREE user Test" preserve-order="true">
+       <classes>
+           <class name="CreateUserTests">
+               <methods>
+                   <include name="registerNewUser"/>
+                   <include name="assigne360ProTag"/>
+               </methods>
+           </class>
+           <!--<class name="RegistrationTest"/>
+           <class name="OfferPageTest"/>
+           <class name="ChartsTest">
+               <methods>
+                   <include name="agreeCookie"/>
+                   <include name="skipTutorial"/>
+                   <include name="addWorkspace"/>
+                   <include name="addIndicators"/>
+                   <include name="addWorkspace"/>
+                   <include name="openChartSettingsModal"/>
+                   <include name="changeChartColor"/>
+               </methods>
+           </class>-->
+       </classes>
+   </test>
 </suite>

@@ -1,7 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LogInTest extends MainTest implements TestDates {
+public class LogInTests extends MainTest implements TestDates {
 
     LandingPage landingPage = LandingPage.getInstance();
     LogInPage logInPage = LogInPage.getInstance();
@@ -14,6 +14,5 @@ public class LogInTest extends MainTest implements TestDates {
         landingPage.agreeCookie();
         landingPage.navigateToLogIn();
         logInPage.logIn(emailToLogin, passwordToLogin);
-
     }
 }

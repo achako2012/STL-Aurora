@@ -24,6 +24,7 @@ public class HTTPRequests {
     private static String autorizationToken;
     private static String traderId;
 
+
     //Methods
     public static void registerToBackOffice() {
 
@@ -42,11 +43,11 @@ public class HTTPRequests {
     }
 
 
-    public static void findUserByEmail() {
+    public static void findUserByEmail(String userEmail) {
 
         ArrayList<String> response = given()
                 .param("_dc", "1579519915033")
-                .param("query", "ochako@markettraders.com")
+                .param("query", userEmail)
                 .param("cust_type", "TRADER")
                 .param("page", "1")
                 .param("start", "0")
@@ -64,7 +65,7 @@ public class HTTPRequests {
         System.out.println(traderId);
     }
 
-    public static void set360ProTag() {
+    public static void assigne360ProTag() {
 
         given()
                 .contentType("application/x-www-form-urlencoded")
