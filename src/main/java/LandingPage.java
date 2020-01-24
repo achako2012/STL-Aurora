@@ -5,13 +5,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LandingPage {
 
-    //Xpath Locators
-    static By joinFreeButton = By.xpath(".//a[@class=\"landing-header__button\"]");
-    static By logInButton = By.xpath(".//a[text()='Log in']");
-    static By chartsPage = By.xpath(".//a[@href=\"/charts/\"][text()='Charts'][@class=\"landing-header__nav-link\"]");
-
-    static By agreeCookie = By.xpath(".//button[text()='Agree']");
-
     //Class fields
     private static LandingPage instance;
     private static WebDriver driver = SetUp.getWebDriverInstance();
@@ -31,7 +24,15 @@ public class LandingPage {
         return instance;
     }
 
+    /**Xpath Locators**/
+    static By joinFreeButton = By.xpath(".//a[@class=\"landing-header__button\"]");
+    static By logInButton = By.xpath(".//a[text()='Log in']");
+    static By chartsPage = By.xpath(".//a[@href=\"/charts/\"][text()='Charts'][@class=\"landing-header__nav-link\"]");
+
+    static By agreeCookie = By.xpath(".//button[text()='Agree']");
+
     /**Methods**/
+
 
     public static void navigateToSTL() {
         driver.get("https://smarttrader.com");
