@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeTest;
 public class MainTest {
 
     protected static WebDriver driver = SetUp.getWebDriverInstance();
-    protected static WebDriverWait driverWait = SetUp.getWebDriverWaitInstance();
 
     @BeforeTest
     public void setUp() {

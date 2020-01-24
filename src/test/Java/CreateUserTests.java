@@ -2,9 +2,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateUserTests extends MainTest implements TestDates {
-    LandingPage landingPage = LandingPage.getInstance();
-    RegisterPage registerPage = RegisterPage.getInstance();
-    HTTPRequests http = HTTPRequests.getInstance();
+    private LandingPage landingPage = LandingPage.getInstance();
+    private RegisterPage registerPage = RegisterPage.getInstance();
+    private HTTPRequests http = HTTPRequests.getInstance();
 
     @Test
     public void registerNewUser() {
@@ -18,7 +18,7 @@ public class CreateUserTests extends MainTest implements TestDates {
 
 
     @Test
-    public void assigne360ProTag(){
+    public void assign360ProTag(){
         http.registerToBackOffice();
         http.findUserByEmail(SetUp.date);
         http.assigne360ProTag();

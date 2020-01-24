@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LogInPage {
 
@@ -12,7 +11,6 @@ public class LogInPage {
     //Class Fields
     private static LogInPage instance;
     private static WebDriver driver = SetUp.getWebDriverInstance();
-    private static WebDriverWait driverWait = SetUp.getWebDriverWaitInstance();
 
     //Constructor
     private LogInPage() {

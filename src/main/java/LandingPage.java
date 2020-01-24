@@ -25,11 +25,11 @@ public class LandingPage {
     }
 
     /**Xpath Locators**/
-    static By joinFreeButton = By.xpath(".//a[@class=\"landing-header__button\"]");
-    static By logInButton = By.xpath(".//a[text()='Log in']");
-    static By chartsPage = By.xpath(".//a[@href=\"/charts/\"][text()='Charts'][@class=\"landing-header__nav-link\"]");
+    private static By joinFreeButton = By.xpath(".//a[@class=\"landing-header__button\"]");
+    private static By logInButton = By.xpath(".//a[text()='Log in']");
+    private static By chartsPage = By.xpath(".//a[@href=\"/charts/\"][text()='Charts'][@class=\"landing-header__nav-link\"]");
 
-    static By agreeCookie = By.xpath(".//button[text()='Agree']");
+    private static By agreeCookie = By.xpath(".//button[text()='Agree']");
 
     /**Methods**/
 
