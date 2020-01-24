@@ -31,7 +31,8 @@ public class LandingPage {
         return instance;
     }
 
-    //Methods
+    /**Methods**/
+
     public static void navigateToSTL() {
         driver.get("https://smarttrader.com");
         SetUp.waitForPageLoaded();
