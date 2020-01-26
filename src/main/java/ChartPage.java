@@ -35,20 +35,20 @@ public class ChartPage {
 
     //Xpath Locators
 
-    static By exploreMySelf = By.xpath("");
+    static By skipExplore = By.xpath("");
 
-    static By addWorkspaceButton = By.xpath("");
-    static By addWorkspaceDropDown = By.xpath("");
-    static By newWorkspaceButton = By.xpath("");
-    static By newWorkspaceParametersModal = By.xpath("");
-    static By workspaceNameField = By.xpath("");
-    static By enterSymbolField = By.xpath("");
-    static By listOfAllSymbols = By.xpath("");
-    static By timeFrameButton = By.xpath("");
-    static By timeFrameDropDown = By.xpath("");
-    static By timeFrame1M = By.xpath("");
-    static By templateDropDown = By.xpath("");
-    static By sumbitWorkspaceButton = By.xpath("");
+    static By addWorkspaceButton = By.xpath(".//i[@class=\"ucpicon-add new-tab-btn\"]");
+    static By addWorkspaceDropDown = By.xpath(".//div[@class=\"dropdown dropdown--top left-fade-in left-fade-in--finished\"]");
+    static By newWorkspaceButton = By.xpath(".//div[@class=\"dropdown dropdown--top left-fade-in left-fade-in--finished\"]/div/ul/li[@id=\"addNewWSP\"]");
+    static By newWorkspaceParametersModal = By.xpath(".//div[@class=\"modal-content\"]");
+    static By workspaceNameField = By.xpath(".//div[@class=\"modal-content\"]//input[@placeholder=\"Enter Workspace name\"]");
+    static By enterSymbolField = By.xpath(".//div[@class=\"modal-content\"]//input[@placeholder=\"Enter Symbol\"]");
+    static By listOfAllSymbols = By.xpath(".//div[@role=\"tabpanel\"][@class=\"scxInstrumentSearchResults allResult tab-pane active\"]/div[@data-scxexchange]");
+    static By timeFrameButton = By.xpath(".//div[@class=\"scxToolbarButton-buttonWrapper createChartAndWspsDropDown\"]");
+    static By timeFrameDropDown = By.xpath(".//div[@style=\"top: 168px; left: 621.813px; display: block;\"]/div[@class=\"scxTimeFramePicker-ValuesWrapper\"]");
+    static By timeFrame1M = By.xpath(".//div[@style=\"top: 168px; left: 621.813px; display: block;\"]/div[@class=\"scxTimeFramePicker-ValuesWrapper\"]/div[1]");
+    static By templateDropDown = By.xpath("//select[@id=\"add_new_wsp_template_dropdown\"]");
+    static By submitWorkspaceButton = By.xpath(".//button[text()='Add']");
 
 
 
@@ -57,7 +57,7 @@ public class ChartPage {
 
     public void skipNagModals() {
 
-        driver.findElement(exploreMySelf).click();
+        driver.findElement(skipExplore).click();
     }
 
 
@@ -148,11 +148,11 @@ public class ChartPage {
         }
 
         //Sumbit add new workspace
-        driverWait.until(ExpectedConditions.elementToBeClickable(sumbitWorkspaceButton));
+        driverWait.until(ExpectedConditions.elementToBeClickable(submitWorkspaceButton));
         try {
-            driver.findElement(sumbitWorkspaceButton).click();
+            driver.findElement(submitWorkspaceButton).click();
         } catch (NoSuchElementException e) {
-            System.out.println("sumbitWorkspaceButton doesn't visible!");
+            System.out.println("submitWorkspaceButton doesn't visible!");
         }
 
     }

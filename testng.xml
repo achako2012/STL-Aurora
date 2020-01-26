@@ -5,7 +5,7 @@
            <class name="CreateUserTests">
                <methods>
                    <include name="registerNewUser"/>
-                   <include name="assigne360ProTag"/>
+                   <include name="assign360ProTag"/>
                </methods>
            </class>
            <class name="ChartsTests">
