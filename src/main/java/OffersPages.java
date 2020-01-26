@@ -5,16 +5,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OffersPages {
 
-    /**
-     * Class fields
-     **/
+
+     //Class fields
+
     private static OffersPages instance;
     private static WebDriver driver = SetUp.getWebDriverInstance();
     private static WebDriverWait driverWait = SetUp.getWebDriverWaitInstance();
 
-    /**
-     * Class constructor
-     **/
+
+     // Class constructor
+
     private OffersPages() {
     }
 
@@ -25,15 +25,18 @@ public class OffersPages {
         return instance;
     }
 
-    /**
-     * Xpath Locators
-     **/
+
+     // Xpath Locators
+
     static By startTrialButton = By.xpath("");
     static By stayFreeButton = By.xpath("");
 
-    /**
-     * Methods
-     **/
+
+     // Methods
+    public void closeOfferPage(){
+        
+    }
+
     public void startTrialButton() {
         driverWait.until(ExpectedConditions.presenceOfElementLocated(startTrialButton));
         driverWait.until(ExpectedConditions.elementToBeClickable(startTrialButton));
