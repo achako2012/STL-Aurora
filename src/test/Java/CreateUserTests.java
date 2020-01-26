@@ -8,7 +8,7 @@ public class CreateUserTests extends MainTest implements TestDates {
 
     @Test
     public void registerNewUser() {
-        landingPage.navigateToSTL();
+        landingPage.navigateToSTL(environment);
         Assert.assertEquals("Forex Trading Software & Stock Market Charting Software | SmartTrader", driver.getTitle());
         landingPage.agreeCookie();
         landingPage.navigateToJoinFree();
@@ -22,8 +22,6 @@ public class CreateUserTests extends MainTest implements TestDates {
         http.registerToBackOffice();
         http.findUserByEmail(SetUp.date);
         http.assigne360ProTag();
-
-
     }
 }
 

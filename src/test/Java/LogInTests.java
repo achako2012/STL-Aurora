@@ -3,13 +3,14 @@ import org.testng.annotations.Test;
 
 public class LogInTests extends MainTest implements TestDates {
 
-    LandingPage landingPage = LandingPage.getInstance();
-    LogInPage logInPage = LogInPage.getInstance();
+    private LandingPage landingPage = LandingPage.getInstance();
+    private LogInPage logInPage = LogInPage.getInstance();
+
 
 
     @Test
     public void logIn() {
-        landingPage.navigateToSTL();
+        landingPage.navigateToSTL(environment);
         Assert.assertEquals("Forex Trading Software & Stock Market Charting Software | SmartTrader", driver.getTitle());
         landingPage.agreeCookie();
         landingPage.navigateToLogIn();

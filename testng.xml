@@ -8,6 +8,11 @@
                    <include name="assigne360ProTag"/>
                </methods>
            </class>
+           <class name="ChartsTests">
+               <methods>
+                   <include name="addNewWorkspace"/>
+               </methods>
+           </class>
            <!--<class name="RegistrationTest"/>
            <class name="OfferPageTest"/>
            <class name="ChartsTest">

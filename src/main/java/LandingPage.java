@@ -34,9 +34,17 @@ public class LandingPage {
     /**Methods**/
 
 
-    public static void navigateToSTL() {
-        driver.get("https://smarttrader.com");
-        SetUp.waitForPageLoaded();
+    public static void navigateToSTL(String environment) {
+        switch (environment) {
+            case "prod":
+                driver.get("https://smarttrader.com/");
+                SetUp.waitForPageLoaded();
+                break;
+            case "dev":
+                driver.get("https://dev.smarttrader.com/");
+                SetUp.waitForPageLoaded();
+                break;
+        }
     }
 
     public static void navigateToJoinFree() {

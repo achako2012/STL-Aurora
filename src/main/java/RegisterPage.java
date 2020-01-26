@@ -14,7 +14,7 @@ public class RegisterPage {
 
     private static RegisterPage instance;
     private static WebDriver driver = SetUp.getWebDriverInstance();
-    private static WebDriverWait driverWait = SetUp.getWebDriverWaitInstance();
+
 
 
     private RegisterPage() {
@@ -33,12 +33,15 @@ public class RegisterPage {
 
         driver.findElement(fullNameField).clear();
         driver.findElement(fullNameField).sendKeys(fullName + SetUp.date);
+        System.out.println(fullName + SetUp.date);
 
         driver.findElement(emailAdressField).clear();
         driver.findElement(emailAdressField).sendKeys(SetUp.date + email);
+        System.out.println(SetUp.date + email);
 
         driver.findElement(passwordField).clear();
         driver.findElement(passwordField).sendKeys(password + SetUp.date);
+        System.out.println(password + SetUp.date);
 
         driver.findElement(confirmPasswordField).clear();
         driver.findElement(confirmPasswordField).sendKeys(password + SetUp.date);

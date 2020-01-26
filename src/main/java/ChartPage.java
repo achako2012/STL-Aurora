@@ -13,16 +13,15 @@ import java.util.Random;
 
 public class ChartPage {
 
-    /**
-     * Class fields
-     **/
+
+    //Class fields
+
     private static ChartPage instance;
     private static WebDriver driver = SetUp.getWebDriverInstance();
     private static WebDriverWait driverWait = SetUp.getWebDriverWaitInstance();
 
-    /**
-     * Class constructor
-     **/
+    // Class constructor
+
     private ChartPage() {
     }
 
@@ -33,9 +32,8 @@ public class ChartPage {
         return instance;
     }
 
-    /**
-     * Xpath Locators
-     **/
+
+    //Xpath Locators
 
     static By exploreMySelf = By.xpath("");
 
@@ -53,9 +51,9 @@ public class ChartPage {
     static By sumbitWorkspaceButton = By.xpath("");
 
 
-    /**
-     * Methods
-     **/
+
+     //Methods
+
 
     public void skipNagModals() {
 
@@ -63,7 +61,7 @@ public class ChartPage {
     }
 
 
-    public void addNewWorkspace(String workspaceName, String templateName) {
+    public void addNewWorkspace(String templateName) {
 
         //Enter Workspace Name
         driverWait.until(ExpectedConditions.elementToBeClickable(addWorkspaceButton));
@@ -74,7 +72,7 @@ public class ChartPage {
 
         driver.findElement(workspaceNameField).click();
         driver.findElement(workspaceNameField).clear();
-        driver.findElement(workspaceNameField).sendKeys(workspaceName);
+        driver.findElement(workspaceNameField).sendKeys("workspace"+SetUp.date);
 
 
         //Chose Symbol
@@ -138,18 +136,22 @@ public class ChartPage {
 
         //Select Template
         driverWait.until(ExpectedConditions.elementToBeClickable(templateDropDown));
-        try{
-            Select template = new Select(driver.findElement(templateDropDown));
-            template.selectByVisibleText(templateName);
-        }catch (NoSuchElementException e){
+        try {
+            if(templateName.equals("none")){
+                System.out.println("Template doesn't selected!");
+            }else {
+                Select template = new Select(driver.findElement(templateDropDown));
+                template.selectByVisibleText(templateName);
+            }
+        } catch (NoSuchElementException e) {
             System.out.println("Template doesen't visible");
         }
 
         //Sumbit add new workspace
         driverWait.until(ExpectedConditions.elementToBeClickable(sumbitWorkspaceButton));
-        try{
+        try {
             driver.findElement(sumbitWorkspaceButton).click();
-        }catch(NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             System.out.println("sumbitWorkspaceButton doesn't visible!");
         }
 

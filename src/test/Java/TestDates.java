@@ -1,5 +1,11 @@
 public interface TestDates {
 
+    //Environment Settings
+    String environment = "dev";
+
+    //Charts Settings
+    String templateName = "none";
+
     //Register User
     String fullName = "stlqa";
     String email = "stlqa@gmail.com";
