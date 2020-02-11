@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Twitt search validator",
+  "required": [
+    "statuses",
+    "search_metadata"
+  ],
+  "type": "object",
+  "properties": {
+    "statuses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "created_at",
+          "id",
+          "id_str",
+          "text",
+          "truncated",
+          "entities"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "id": {
+            "type": "integer",
+            "minLength": 1
+          },
+          "id_str": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "truncated": {
+            "type": "boolean"
+          },
+          "entities": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "search_metadata": {
+      "type": "object"
+    }
+  }
+}
